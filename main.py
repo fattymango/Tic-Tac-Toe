@@ -1,31 +1,65 @@
 from board import Board
 from tictactoe import TicTacToe
 
-b = Board()
+
+def get_player_choice():
+    '''
+        Get player's choice of X or O.
+                                        '''
+
+    choice = ''
+    while not choice.upper() in ['X','O']:
+        try:choice = input('Choose X or O:\n ').upper()
+        except (EOFError, KeyboardInterrupt):
+            print('Bye')
+            exit()
+    if choice == 'X': comp_choice ='O'
+    else : comp_choice = 'X'
+    return choice,comp_choice
 
 
+def play_first():
+    '''
+        Get player's choice of starting first.
+                                            '''
 
-human_choice ,comp_choice,first_flag = '','','' 
+    choice = ''
+    while not choice.upper() in ['Y','N']:
+        try:choice = input('Do you want to start first?[Y/N]\n ').upper()
+        except (EOFError, KeyboardInterrupt):
+            print('Bye')
+            exit()
+    if choice == 'Y':return True
+    else : return False
+    
+def alpha_beta():
+    '''
+        Get player's choice of using Alpha-
+         Beta pruning.
+                                            '''
 
-while not human_choice.upper() in ['X','O']:
-    try:
-        print('')
-        human_choice = input('Choose X or O:\n ').upper()
-    except (EOFError, KeyboardInterrupt):
-        print('Bye')
-        exit()
+    choice = ''
+    while not choice.upper() in ['Y','N']:
+        try:choice = input('Do you want to use Alpha-Beta pruning?[Y/N]\n ').upper()
+        except (EOFError, KeyboardInterrupt):
+            print('Bye')
+            exit()
+    if choice == 'Y':return True
+    else : return False
 
-if human_choice == 'X': comp_choice ='O'
-else : comp_choice = 'X'
-while not first_flag.upper() in ['Y','N']:
-    try:
-        print('')
-        first_flag = input('Do you want to start first?[Y/N]\n ').upper()
-    except (EOFError, KeyboardInterrupt):
-        print('Bye')
-        exit()
+    
+human_coice , comp_choice = get_player_choice()
 
+'''
+        Calling the Tic-Tac-Toe game class
+         with player's choices.
+                                            '''
+TicTacToe(
+            board=Board(),
+            comp_choice=comp_choice,
+            human_choice=human_coice
 
-ttt = TicTacToe(board=b,comp_choice=comp_choice,human_choice=human_choice)
-if first_flag == 'Y':ttt.start(True)
-else : ttt.start(False)
+            ).start(
+                    first_flag=play_first(),
+                    AlphaBeta=alpha_beta()
+                    )
