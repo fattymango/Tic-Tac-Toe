@@ -3,9 +3,55 @@
 ###### Wrote using Python, every game element is an class so it can be reusable for other projects!
 ###### This project is an assignment for my AI class #CS362.
 ## Installation
-to be done
-## how to use
-to be done
+1. First click **Code** green button 
+<p align="center">
+<img src="/imgs/code.png" width="350" >
+</p>
+
+2. Then click **Download ZIP** button
+<p align="center">
+<img src="/imgs/install.png" width="350" >
+</p>
+
+3. Extract the files.
+4. Open **main.exe** and enjoy!
+
+
+## How to play
+1. Make sure you've opened **main.exe** 
+2. The game will ask you what player you would be X or O, you can answer that by typing Y for yes and N for no :
+<br>
+<p align="center">
+<img src="/imgs/xo.png" width="350" >
+</p>
+3. The game will ask you if you would like to start first, you can answer that by typing Y for yes and N for no :
+<br><br>
+<p align="center">
+<img src="/imgs/first.png" width="350" >
+</p>
+3. The game will ask you if you would like to use Alpha-Beta pruning or not, you can answer that by typing Y for yes and N for no :
+<br><br>
+<p align="center">
+<img src="/imgs/alphabeta.png" width="350" >
+</p>
+4.The game will draw a numbered board and you can choose which cell you would like to use by typing its shown number:
+<br><br>
+<p align="center">
+<img src="/imgs/board.png" width="350" >
+</p>
+5.After hitting enter the computer will make his move and draw the board again.
+<br><br>
+<p align="center">
+<img src="/imgs/after.png" width="350" >
+</p>
+6. When the game ends the game will print out the winner.
+<br><br>
+<p align="center">
+<img src="/imgs/tie.png" width="350" >
+</p>
+
+**ps : You will never win. enjoy!**
+
 ## Board
 ```python
 Board(board = None)
