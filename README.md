@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-#### Tic-Tac-Toe game using MiniMax algorithm and Alpha-Beta pruning.
+#### Tic-Tac-Toe game using the MiniMax algorithm and Alpha-Beta pruning.
 ###### Wrote using Python, every game element is an class so it can be reusable for other projects!
 ###### This project is an assignment for my AI class #CS362.
 ## Installation
