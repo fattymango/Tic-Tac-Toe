@@ -63,3 +63,9 @@ TicTacToe(
                     first_flag=play_first(),
                     AlphaBeta=alpha_beta()
                     )
+
+quit_flag = False
+while not quit_flag:
+    quit_flag = input('press and key to quit.')
+    if quit_flag != False: break
+    

@@ -64,7 +64,7 @@ class TicTacToe:
                 if self.__board.game_over():
                     self.__board.draw()
                     self.__board.print_winner()
-                    exit()
+                    break
 
                 self.__board.draw()
                 
@@ -102,7 +102,7 @@ class TicTacToe:
                 if self.__board.game_over():
                     self.__board.draw()
                     self.__board.print_winner()
-                    exit()    
+                    break    
                      
                 self.__board.draw()
 
@@ -183,7 +183,7 @@ class TicTacToe:
             state[x][y] = 0
 
             if player == self.__comp_choice:
-                # X is always the max player
+                
                 if score[2] > alpha:
                     alpha = score[2]
                     best = score
