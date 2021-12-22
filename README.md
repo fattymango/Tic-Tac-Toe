@@ -8,7 +8,7 @@
 <img src="/imgs/code.png" width="350" >
 </p>
 
-2. Then click **Download ZIP** button
+2. Click **Download ZIP** button
 <p align="center">
 <img src="/imgs/install.png" width="350" >
 </p>
@@ -19,7 +19,7 @@
 
 ## How to play
 1. Make sure you've opened **main.exe** 
-2. The game will ask you what player you would be X or O, you can answer that by typing Y for yes and N for no :
+2. The game will ask you what player you would like to choose (X or O) :
 <br>
 <p align="center">
 <img src="/imgs/xo.png" width="350" >
@@ -39,12 +39,12 @@
 <p align="center">
 <img src="/imgs/board.png" width="350" >
 </p>
-5.After hitting enter the computer will make his move and draw the board again.
+5.After hitting enter, the computer will make his move and draw the board again.
 <br><br>
 <p align="center">
 <img src="/imgs/after.png" width="350" >
 </p>
-6. When the game ends the game will print out the winner.
+6. When the game ends it will print out the winner.
 <br><br>
 <p align="center">
 <img src="/imgs/tie.png" width="350" >
@@ -70,11 +70,11 @@ TicTacToe(board,comp_choice,human_choice)
     Handles the whole game from the first start until the end.
 - the class takes 3 mandatory arguments:
     1. ```board``` 
-        - this arguments must be  a Board() object thus the game can operateon. 
+        - this arguments must be  a ```Board()``` object thus the game can operate on. 
     2. ```comp_choice``` 
-        - ```[char]``` this arguments will be the choice of the Computer whether its X or O.
+        - ```[char]``` the choice of the Computer whether its X or O.
     3. ```human_choice``` 
-        - ```[char]``` this arguments will be the choice of the Human whether its X or O.
+        - ```[char]``` the choice of the Human whether its X or O.
     
 #### start()
 ```python 
@@ -98,9 +98,9 @@ minimax(state, depth, player)
     1. ```state``` 
         - ```[list]``` A list object which represents the current state of the board.
     2. ```depth``` 
-        - ```[int]``` An integer which represents the current depth of the search tree.
+        - ```[int]``` current depth of the search tree.
     3. ```player``` 
-        - ```[char]``` A character which represents the current player turn.
+        - ```[char]``` current player turn.
 ###### Technique :
 The function first initializes a default value to start looping through the tree.
 ```python 
@@ -109,10 +109,10 @@ if player == self.__comp_choice:
 else:
     best = [-1, -1, +infinity]
 ```
-while best ```list``` represent the best move the function have explored yet in this format 
+while best ```list()``` represents the best move the function have explored yet in
 ```[row , column , score] ```
-then we will create a temporary
-``` Board``` object so we can use its utility functions.
+ format then we will create a temporary
+``` Board()``` object so we can use its utility functions.
 ```python
 board = Board(state)
 ```
@@ -122,6 +122,21 @@ if depth == 0 or board.game_over():
   score = board.evaluate(self.__comp_choice,self.__human_choice)
   return [-1, -1, score]
 ```
+
+```evaluate()``` will return the terminal leaf value.
+- if AI wins return 1
+- if human wins return -1
+- if its a tie return 0
+    
+    
+```python
+evaluate(self,c,h):
+
+if self.check_winner(c):return +1
+elif self.check_winner(h):return -1      
+return 0    
+```
+
 to get to the state of leaf node we need to create the tree by looping through every possible move of the current state of board
 we will lopp recursively by calling the ```minimax``` function and decreasing the depth : 
 ```python 
@@ -141,7 +156,7 @@ else:
   if score[2] < best[2]:
     best = score  
 ```
-At the end of the call we will return the our best position and score
+At the end of the call we will return our best position and score
 ```python 
 return best
 ```
@@ -152,8 +167,8 @@ alpha_beta(state, depth, player,alpha,beta)
 ###### Description :
     Determines the AI next move by using the enhanced MiniMax algorithm.
     this functions has a slight difference of the basic minimax function with huge performance gap,
-    tracking alpha and beta values allow us to determine whether the next unexplored branches and leafs are useless and won't affect
-    our score or not, if is then we won't explore them.
+    tracking alpha and beta values allow us to determine whether the next unexplored branches and leafs are useless and won't
+    affect our score or not, if is then we won't explore them.
 - it takes 5 mandatory arguments:
     1. ```state``` 
         - ```[list]``` A list object which represents the current state of the board.
