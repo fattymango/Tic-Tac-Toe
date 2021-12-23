@@ -167,19 +167,19 @@ alpha_beta(state, depth, player,alpha,beta)
 ###### Description :
     Determines the AI next move by using the enhanced MiniMax algorithm.
     this functions has a slight difference of the basic minimax function with huge performance gap,
-    tracking alpha and beta values allow us to determine whether the next unexplored branches and leafs are useless and won't
+    tracking alpha and beta values allows us to determine whether the next unexplored branches and leafs are useless and won't
     affect our score or not, if is then we won't explore them.
 - it takes 5 mandatory arguments:
     1. ```state``` 
-        - ```[list]``` A list object which represents the current state of the board.
+        - ```[list]``` current state of the board.
     2. ```depth``` 
-        - ```[int]``` An integer which represents the current depth of the search tree.
+        - ```[int]``` current depth of the search tree.
     3. ```player``` 
-        - ```[char]``` A character which represents the current player turn.
+        - ```[char]``` current player turn.
     4. ```alpha``` 
-        - ```[int]``` the current alpha value.
+        - ```[int]``` current alpha value.
     5. ```beta``` 
-        - ```[int]``` the current beta value.
+        - ```[int]``` current beta value.
 ###### Technique :
 As i mentioned before there is a slight difference between ``` alpha_beta() ``` and ``` minimax() ```.
 Since we are tracking the alpha beta values then we will keep comparing their values with our best score.
