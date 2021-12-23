@@ -109,7 +109,7 @@ if player == self.__comp_choice:
 else:
     best = [-1, -1, +infinity]
 ```
-while best ```list()``` represents the best move the function have explored yet in
+while ```best [list]``` represents the best move the function have explored yet in
 ```[row , column , score] ```
  format then we will create a temporary
 ``` Board()``` object so we can use its utility functions.
