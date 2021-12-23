@@ -84,9 +84,9 @@ start(first_flag,AlphaBeta)
     Handles the whole game process and works out user's preferences.
 - it takes 2 mandatory arguments:
     1. ```first_flag``` 
-        - ```[bool]``` A flag which determines if the user wants to start first.
+        - ```[bool]``` determines if the user wants to start first.
     2. ```AlphaBeta``` 
-        - ```[bool]``` A flag which determines if the user wants to use Alpha-Beta pruning.
+        - ```[bool]``` determines if the user wants to use Alpha-Beta pruning.
 
 ## minimax()
 ```python 
